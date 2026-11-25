@@ -1,0 +1,124 @@
+.breadcrumbs{display:flex;gap:10px;color:var(--muted);font-size:12px;margin-bottom:18px}
+.breadcrumbs a{color:var(--muted)}
+.report-tabs{overflow-x:auto;max-width:100%;white-space:nowrap}
+.tabs button[aria-current="page"]{border-color:var(--primary);color:var(--ink)}
+.report-filters{padding:24px;margin-bottom:24px}
+.report-filters>h2{font-size:16px}
+.report-filters .report-fields{grid-template-columns:repeat(3,minmax(0,1fr));gap:0 20px}
+.report-filters .form-actions{margin-top:20px;padding-top:16px}
+.report-filters .form-actions .action-row{margin:0}
+.period-presets{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.period-presets .button{background:var(--ground);font-size:12px;padding:8px 12px}
+.financial-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px;margin:24px 0;border-block:1px solid var(--line);padding:20px 0;font-variant-numeric:tabular-nums}
+.financial-strip dt{font-size:12px;color:var(--muted)}
+.financial-strip dd{font-size:23px;font-weight:650;margin:4px 0}
+.financial-strip small{font-size:11px;max-width:25ch}
+.operational-table{margin-top:20px;max-width:100%}
+.operational-table th{white-space:nowrap}
+.operational-table td{vertical-align:middle;min-width:100px;max-width:270px;white-space:normal}
+.operational-table td strong{font-weight:600}
+.operational-table .identifier-cell{font-size:11px;overflow-wrap:anywhere;min-width:160px}
+.operational-table .money{white-space:nowrap}
+.operational-cards{display:none}
+.record-details{margin-top:28px;padding-top:24px;border-top:1px solid var(--line)}
+.record-details dd{overflow-wrap:anywhere}
+.section-toolbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:20px 0}
+.month-navigation{display:flex;align-items:center;gap:8px}
+.month-navigation h2{text-transform:capitalize;font-size:18px}
+.calendar-toolbar .segmented{margin:0;min-width:235px}
+.calendar-toolbar .segmented button{display:flex;gap:8px;align-items:center;justify-content:center}
+.receivables-calendar{margin-top:20px}
+.calendar-week,.calendar-days{display:grid;grid-template-columns:repeat(7,minmax(0,1fr))}
+.calendar-week{margin-bottom:8px;text-align:center;font-size:12px;color:var(--muted)}
+.calendar-days{border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.calendar-days>button,.calendar-padding{min-height:106px;background:var(--surface);border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:10px;display:flex;flex-direction:column;align-items:flex-start;gap:8px;color:var(--muted);text-align:left;font-variant-numeric:tabular-nums}
+.calendar-days>button:hover{background:var(--ground)}
+.calendar-days>button.has-batches{color:var(--ink);background:var(--secondary)}
+.calendar-days>button.selected{outline:2px solid var(--ink);outline-offset:-2px}
+.calendar-days strong{font-size:13px;overflow-wrap:anywhere}
+.calendar-days small{font-size:11px}
+.calendar-count,.calendar-batch-cards{display:none}
+.calendar-padding{background:var(--ground)}
+.receivables-agenda{margin-top:20px}
+.receivables-agenda>button{width:100%;display:grid;grid-template-columns:1fr 1fr auto auto;gap:20px;align-items:center;text-align:left;padding:20px 12px;color:var(--ink);border:0;border-bottom:1px solid var(--line);background:var(--surface)}
+.receivables-agenda>button[aria-pressed="true"]{background:var(--secondary)}
+.receivable-day-drawer{position:fixed;inset:0 0 0 auto;margin:0 0 0 auto;width:28rem;max-width:92vw;height:100dvh;max-height:100dvh;padding:0;border:0;border-radius:0;background:var(--surface);color:var(--ink);box-shadow:-12px 0 40px rgb(0 0 0 / 16%);overflow:hidden}
+.receivable-day-drawer[open]{display:flex;flex-direction:column;animation:receivable-drawer-in 180ms cubic-bezier(.16,1,.3,1)}
+.receivable-day-drawer::backdrop{background:rgb(0 0 0 / 32%)}
+.receivable-drawer-header{padding:24px;border-bottom:1px solid var(--line);flex-shrink:0}
+.receivable-drawer-title{display:flex;align-items:flex-start;gap:16px;justify-content:space-between}
+.receivable-drawer-title h2{font-size:22px;line-height:1.35;margin:0;text-wrap:balance}
+.receivable-drawer-title .button{flex-shrink:0;padding:10px;min-width:44px;min-height:44px}
+.receivable-drawer-header>p{color:var(--muted);font-size:13px;margin:10px 0 0}
+.receivable-day-totals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:20px 0 0;font-variant-numeric:tabular-nums}
+.receivable-day-totals dt{color:var(--muted);font-size:12px}
+.receivable-day-totals dd{margin:6px 0 0;font-size:16px;font-weight:600;overflow-wrap:anywhere}
+.receivable-drawer-content{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:24px;scrollbar-width:thin;scrollbar-color:var(--input) var(--surface)}
+.receivable-batch{border:1px solid var(--line);border-radius:8px;padding:20px;margin-bottom:16px}
+.receivable-batch:last-child{margin-bottom:0}
+.receivable-batch-heading{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.receivable-batch-heading h3{font-size:13px;font-weight:500;margin:0}
+.receivable-batch-amount{font-size:24px;font-weight:600;line-height:1.3;margin:14px 0 0;font-variant-numeric:tabular-nums}
+.receivable-partial{color:var(--muted);font-size:12px;margin:4px 0 0}
+.receivable-merchant{font-size:14px;font-weight:500;margin:16px 0 8px;overflow-wrap:anywhere}
+.receivable-payment-kind{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin:0 0 16px}
+.receivable-statement{border-top:1px dashed var(--line);margin:0}
+.receivable-statement>div{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13px}
+.receivable-statement>div:last-child{border-bottom:0;padding-bottom:0}
+.receivable-statement dt{color:var(--muted)}
+.receivable-statement dd{margin:0;text-align:right;font-variant-numeric:tabular-nums}
+.receivable-statement .statement-total{font-weight:600;font-size:14px}
+.receivable-statement .statement-total dt{color:var(--ink)}
+.receivable-day-empty{padding:36px 0}
+.receivable-day-empty h3{font-size:18px;margin:0 0 12px}
+.receivable-day-empty p{color:var(--muted);font-size:14px;line-height:1.6}
+@keyframes receivable-drawer-in{from{transform:translateX(24px);opacity:.8}to{transform:translateX(0);opacity:1}}
+@media(prefers-reduced-motion:reduce){.receivable-day-drawer[open]{animation:none}}
+@media(max-width:480px){.receivable-drawer-header,.receivable-drawer-content{padding:20px}.receivable-drawer-title h2{font-size:20px}.receivable-batch{padding:16px}.receivable-day-totals{gap:8px}.receivable-day-totals dd{font-size:14px}}
+.charge-steps{list-style:none;display:flex;margin:0 0 28px;padding:0;border-bottom:1px solid var(--line)}
+.charge-steps li{flex:1;border-bottom:2px solid transparent}
+.charge-steps li[aria-current="step"]{border-color:var(--primary)}
+.charge-steps button{display:flex;align-items:center;gap:10px;width:100%;min-height:64px;background:none;border:0;text-align:left;color:var(--ink);font-weight:500;padding:12px}
+.charge-steps button>span{display:flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:50%;width:28px;height:28px;flex-shrink:0;font-variant-numeric:tabular-nums}
+.charge-steps li[aria-current="step"] button>span{background:var(--primary);color:var(--primary-foreground);border-color:var(--primary)}
+.charge-form{min-width:0;align-self:start}
+.charge-form>h2{margin-bottom:18px}
+.charge-form .wizard-fields{margin-top:0;border:0;padding:0;min-width:0}
+.charge-form .wizard-fields>.subtle-note{margin-bottom:20px}
+.charge-form .segmented{margin:0 0 24px}
+.charge-form textarea{resize:vertical}
+.create-summary{align-self:start;position:sticky;top:24px}
+.create-summary .charge-preview-name{font-size:19px;font-weight:600;margin-top:26px;color:var(--ink);overflow-wrap:anywhere}
+.create-summary p{overflow-wrap:anywhere}
+.generator-action{display:flex;align-items:center;padding-top:25px}
+.schedule-heading{display:flex;justify-content:space-between;gap:12px;margin:28px 0 12px;flex-wrap:wrap}
+.schedule-heading span{font-size:12px;color:var(--muted)}
+.schedule-rows{border-top:1px solid var(--line)}
+.schedule-row{display:grid;grid-template-columns:20px minmax(0,1.3fr) minmax(0,1fr) 40px;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.schedule-row>strong{color:var(--muted);font-size:12px}
+.schedule-row label{font-size:11px;margin-top:0}
+.schedule-row .button{padding:8px;margin-top:20px}
+.review-layout{grid-template-columns:minmax(0,850px);justify-content:center}
+.review-section{display:flex;justify-content:space-between;gap:24px;margin:24px 0;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.review-section p{color:var(--muted);margin-top:8px;overflow-wrap:anywhere}
+.review-schedule{margin:24px 0;border-top:1px solid var(--line)}
+.review-schedule>div{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.charge-success{max-width:800px;margin:40px auto;padding:36px}
+.charge-success h1{margin:20px 0 12px}
+.charge-success .success-mark{color:var(--success)}
+.charge-success .action-row{flex-wrap:wrap}
+.charge-status-filter{min-width:170px}
+.charge-status-filter label{margin-top:0;font-size:12px}
+.panel-toolbar:has(.charge-status-filter){align-items:flex-end}
+.panel-toolbar .search{flex:1;min-width:160px}
+.skip:not(:focus){transform:translateY(-200vh)}
+@media(min-width:1200px){.create-layout:not(.review-layout){grid-template-columns:minmax(0,1fr) 310px}}
+@media(max-width:1100px){.report-filters .report-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.financial-strip{grid-template-columns:repeat(2,minmax(0,1fr))}.create-summary{position:static}.calendar-toolbar{flex-wrap:wrap}.calendar-days>button{min-height:95px;padding:8px 5px}}
+@media(max-width:700px){
+ .calendar-days>button strong,.calendar-days>button small{display:none}.calendar-days .calendar-count{display:block;font-size:10px;line-height:1.3;color:var(--ink)}.calendar-days>button,.calendar-padding{min-height:58px!important}.calendar-batch-table{display:none}.calendar-batch-cards{display:block}.calendar-batch-cards article{padding:20px 0;border-bottom:1px solid var(--line)}.calendar-batch-cards dl>div{display:flex;justify-content:space-between;gap:16px;padding:4px 0}.calendar-batch-cards dt{color:var(--muted)}.calendar-batch-cards dd{margin:0;font-variant-numeric:tabular-nums}
+ .charge-form .method-options{display:grid;grid-template-columns:1fr}.charge-form .method-option{width:100%;justify-content:flex-start}.charge-form .method-option input{margin-left:auto}.charge-form .form-grid{grid-template-columns:1fr}.generator-action{padding-top:12px}
+ .report-filters .report-fields{grid-template-columns:1fr}.report-filters{padding:20px}.report-filters .form-actions{flex-wrap:wrap;gap:14px}.report-filters .form-actions .action-row{width:100%;justify-content:flex-end;flex-wrap:wrap}.report-tabs{gap:20px}
+ .operational-table,.charge-list-table{display:none}.operational-cards{display:block;margin-top:16px}.operational-cards article{padding:20px 0;border-bottom:1px solid var(--line)}.operational-card-heading{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.operational-card-heading strong{max-width:60%;overflow-wrap:anywhere}.operational-cards dl{margin:16px 0}.operational-cards dl>div{display:flex;justify-content:space-between;gap:20px;padding:5px 0}.operational-cards dt{color:var(--muted);font-size:12px}.operational-cards dd{margin:0;text-align:right;font-size:13px;max-width:65%;overflow-wrap:anywhere}.operational-cards .button{padding-left:0}.charge-mobile-list{padding:0 20px}.charge-mobile-list p{font-size:12px;margin:12px 0}.charge-mobile-list small{margin-top:8px}
+ .financial-strip{gap:20px 14px}.financial-strip dd{font-size:21px}.financial-strip small{font-size:10px}.month-navigation{width:100%;justify-content:space-between}.calendar-toolbar .segmented{width:100%}.calendar-week{font-size:11px}.calendar-days>button,.calendar-padding{min-height:86px;padding:5px 3px;gap:5px}.calendar-days strong{font-size:10px;line-height:1.3}.calendar-days small{font-size:9px}.calendar-days>button>span{font-size:12px}.receivables-agenda>button{grid-template-columns:1fr auto;gap:8px}.receivables-agenda>button>span{grid-row:2;font-size:12px}.receivables-agenda>button>svg{grid-row:2;grid-column:2}
+ .charge-steps{flex-wrap:wrap}.charge-steps li{flex:1 0 50%}.charge-steps button{font-size:12px;min-height:52px;padding:8px}.charge-steps button>span{width:24px;height:24px}.charge-form{padding:20px}.charge-form input,.charge-form select,.charge-form textarea{font-size:16px}.charge-form .method-options{grid-template-columns:1fr}.charge-form .method-option{min-height:52px}.schedule-row{grid-template-columns:16px minmax(0,1.3fr) minmax(0,1fr) 32px;gap:7px}.schedule-row input{padding:8px;font-size:13px}.schedule-row label{font-size:10px}.schedule-row .button{min-width:32px}.review-section{flex-direction:column;gap:12px}.review-section .button{align-self:flex-start}.review-schedule>div{font-size:12px;gap:8px}.charge-success{padding:24px;margin:0}.charge-status-filter{min-width:130px;flex:1}.panel-toolbar:has(.charge-status-filter){flex-wrap:wrap}.panel-toolbar:has(.charge-status-filter) .search{flex-basis:100%}
+}

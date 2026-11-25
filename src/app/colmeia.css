@@ -1,0 +1,320 @@
+/* Colmeia 0.0.24 / adquirencia-front lib/brand/config.ts.
+   Both prototypes share components, spacing and behavior. */
+:root,
+.theme-root {
+  --primary: #fabd19;
+  --primary-foreground: #0a0a0a;
+  --primary-hover: #fdda77;
+  --background: #ffffff;
+  --foreground: #242424;
+  --canvas: #f3f3f1;
+  --secondary: #f3f3f1;
+  --muted-foreground: #666666;
+  --border: #e2e1df;
+  --input-border: #b5b3b0;
+  --link: #3c2c01;
+  --ring: #775a0e;
+  --selection: #fdda77;
+  --scrollbar: #b5b3b0;
+  --sidebar-background: #1a1a1a;
+  --sidebar-border: #383838;
+  --sidebar-foreground: #b8b8b8;
+  --sidebar-active: #292929;
+  --sidebar-hover: #242424;
+  --summary-accent: #fabd19;
+  --success: #0b266f;
+  --success-bg: #e8edfa;
+  --warning: #705d0e;
+  --warning-bg: #faf6e6;
+  --warning-indicator: #e5bd1a;
+  --danger: #990000;
+  --danger-bg: #fcf2f2;
+  --danger-border: #f2cbcb;
+  --shadow-selection: rgb(0 0 0 / 8%);
+  --shadow-modal: rgb(0 0 0 / 16%);
+  --backdrop: rgb(0 0 0 / 48%);
+  --success-shadow: rgb(45 93 224 / 12%);
+  --success-clear: rgb(45 93 224 / 0%);
+  --radius: 12px;
+  /* Compatibility names for existing operational surfaces. */
+  --navy: var(--sidebar-background);
+  --blue: var(--link);
+  --blue-hover: var(--primary-hover);
+  --ground: var(--canvas);
+  --surface: var(--background);
+  --ink: var(--foreground);
+  --muted: var(--muted-foreground);
+  --line: var(--border);
+  --soft-blue: var(--secondary);
+}
+
+.theme-root[data-theme="alliancepay"] {
+  --primary: #2b63ea;
+  --primary-foreground: #ffffff;
+  --primary-hover: #2d5de0;
+  --background: #fffefc;
+  --foreground: #141f48;
+  --canvas: #f0f4fd;
+  --secondary: #e8eefc;
+  --muted-foreground: #5a6387;
+  --border: #d7dcea;
+  --input-border: #a9b0c6;
+  --link: #2d5de0;
+  --ring: #2b63ea;
+  --selection: #94c3fc;
+  --scrollbar: #a9b0c6;
+  --sidebar-background: #0f1a43;
+  --sidebar-border: #25356a;
+  --sidebar-foreground: #a9b0c6;
+  --sidebar-active: #25356a;
+  --sidebar-hover: #25356a;
+  --summary-accent: #2b63ea;
+}
+
+.theme-root { min-height: 100vh; background: var(--canvas); color: var(--foreground); }
+body { font-family: var(--font-roboto), Roboto, Arial, sans-serif; }
+h1 { font-size: 32px; font-weight: 600; line-height: 1.25; letter-spacing: -.025em; }
+h2 { font-size: 22px; font-weight: 600; }
+h3 { font-size: 16px; font-weight: 600; }
+button, a, input, select, textarea, summary { touch-action: manipulation; }
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible,
+textarea:focus-visible, summary:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+::selection { background: var(--selection); color: var(--foreground); }
+[hidden] { display: none !important; }
+.button { min-height: 44px; border-radius: 8px; font-size: 14px; padding: 11px 18px; }
+.button.primary:active { background: var(--primary); }
+.button.secondary:hover { background: var(--secondary); border-color: var(--input-border); }
+.button:disabled { opacity: .5; }
+input:not([type="checkbox"]), select, textarea { min-height: 48px; border-radius: 8px; padding: 12px; font-size: 14px; }
+.amount-input input:not([type="checkbox"]) { padding-left: 40px; }
+.amount-input > span { top: 50%; transform: translateY(-50%); }
+input:disabled, select:disabled { background: var(--secondary); }
+input:hover, select:hover, textarea:hover { border-color: var(--muted); }
+label, legend { font-size: 13px; color: var(--foreground); }
+fieldset:disabled { opacity: .65; }
+.panel { border-radius: 12px; }
+.notice { border-radius: 8px; }
+.status { border-radius: 6px; font-size: 12px; padding: 4px 9px; }
+.status.neutral { color: var(--muted); background: var(--secondary); }
+.status.success { color: var(--success); background: var(--success-bg); }
+
+/* A quiet workspace frame around the payment task. */
+.sidebar { width: 240px; padding: 36px 16px 24px; }
+.brand { padding: 0 12px; }
+.brand-logo { display: block; object-fit: contain; object-position: left center; max-width: 100%; }
+.brand img { height: 40px; }
+.workspace-name { padding: 24px 12px; margin-bottom: 20px; color: white; font-size: 14px; font-weight: 600; }
+.workspace-name span { display: block; color: var(--sidebar-foreground); font-size: 12px; font-weight: 400; margin-top: 5px; }
+.sidebar nav { gap: 8px; }
+.sidebar nav a { min-height: 48px; font-size: 14px; border-radius: 8px; }
+.sidebar nav a.active { background: var(--sidebar-active); }
+.sidebar nav a.active svg { color: var(--primary); }
+.sidebar-bottom { padding: 24px 12px 0; }
+.main-shell { margin-left: 240px; }
+.topbar { min-height: 80px; height: auto; padding: 14px 40px; gap: 20px; }
+.topbar-note { font-size: 11px; }
+.environment { flex-shrink: 0; }
+.environment[data-environment="PROD"] { color: var(--danger); }
+.environment[data-environment="PROD"] > span { background: var(--danger); }
+main#main { padding: 36px 40px 48px; max-width: 1440px; }
+.page-heading { margin-bottom: 28px; }
+.page-heading p { font-size: 14px; }
+.back { font-size: 13px; margin-bottom: 20px; }
+footer { padding: 0 40px; }
+.intro-strip { background: var(--surface); border: 1px solid var(--line); color: var(--ink); padding: 24px; }
+.intro-strip span:not(.intro-symbol) { color: var(--muted); }
+.intro-symbol { background: var(--primary); color: var(--primary-foreground); border-radius: 12px; }
+.empty-mark { background: var(--secondary); color: var(--link); }
+.search svg { top: 15px; }
+.search input { padding-left: 40px; }
+th { font-size: 12px; background: var(--secondary); }
+td { padding-top: 20px; padding-bottom: 20px; }
+.tabs { gap: 28px; margin-bottom: 28px; }
+.tabs button { padding: 14px 2px; font-size: 14px; }
+.tabs button[aria-selected="true"] { color: var(--ink); border-color: var(--primary); }
+
+/* The preference changes presentation only; it is separate from HML/PROD. */
+.visual-theme-selector { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.visual-theme-selector > span { color: var(--muted); font-size: 12px; white-space: nowrap; }
+.visual-theme-selector > div { display: flex; gap: 3px; padding: 4px; background: var(--secondary); border-radius: 8px; }
+.visual-theme-selector button { border: 0; padding: 8px 12px; min-height: 36px; border-radius: 6px; color: var(--muted); background: transparent; font-size: 12px; font-weight: 500; }
+.visual-theme-selector button[aria-pressed="true"] { color: var(--ink); background: var(--surface); box-shadow: 0 2px 5px var(--shadow-selection); }
+.visual-theme-selector button:hover { color: var(--ink); }
+
+/* Shared checkout composition, matching Colmeia payment-link surfaces. */
+.checkout-layout { grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr); gap: 28px; }
+.checkout-form { padding: 32px; }
+.checkout-form .section-title { align-items: flex-start; margin-bottom: 24px; }
+.checkout-description { color: var(--muted); font-size: 13px; margin-top: 7px; line-height: 1.6; }
+.secure-label { font-size: 11px; padding-top: 5px; }
+.checkout-progress { display: flex; list-style: none; margin: 0 0 28px; padding: 0 0 20px; border-bottom: 1px solid var(--line); gap: 16px; }
+.checkout-progress li { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+.checkout-progress li + li::before { content: ""; width: 22px; height: 1px; background: var(--line); margin-right: 8px; }
+.checkout-progress .current { color: var(--ink); font-weight: 600; }
+.checkout-progress .step-mark { display: grid; place-items: center; width: 25px; height: 25px; border-radius: 50%; background: var(--secondary); flex-shrink: 0; }
+.checkout-progress .current .step-mark { background: var(--primary); color: var(--primary-foreground); }
+.checkout-fields { border: 0; padding: 0; margin: 0; min-width: 0; }
+.checkout-form h3 { margin-top: 28px; margin-bottom: 6px; }
+.checkout-form .payment-methods { margin: 0; }
+.payment-methods legend { font-size: 16px; font-weight: 600; margin-bottom: 16px; }
+.payment-methods .segmented { background: transparent; padding: 0; gap: 10px; margin-bottom: 24px; }
+.payment-methods .segmented button { border: 1px solid var(--input-border); border-radius: 8px; padding: 14px 12px; min-height: 74px; flex-wrap: wrap; justify-content: flex-start; text-align: left; color: var(--muted); gap: 10px; }
+.payment-methods .segmented button.selected { border-color: var(--link); background: var(--secondary); box-shadow: inset 0 0 0 1px var(--link); color: var(--ink); }
+.method-copy { display: flex; flex-direction: column; gap: 3px; }
+.method-copy strong { font-size: 14px; font-weight: 600; }
+.method-copy small { font-size: 11px; font-weight: 400; }
+.payer-optional { border-top: 1px solid var(--line); padding: 18px 0 0; }
+.payer-optional > summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+.payer-optional > summary:hover { color: var(--ink); }
+.payer-required > summary { display: none; }
+.checkout-submit { margin-top: 28px; border-top: 1px solid var(--line); padding-top: 24px; }
+.pay-button { min-height: 52px; font-size: 15px; margin-top: 0; }
+.checkout-submit .subtle-note { display: flex; align-items: flex-start; justify-content: center; gap: 7px; text-align: center; font-size: 11px; margin-top: 12px; }
+.checkout-submit .subtle-note svg { flex-shrink: 0; margin-top: 2px; }
+.order-summary { position: sticky; top: 24px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-top: 4px solid var(--summary-accent); border-radius: 12px; padding: 24px; }
+.summary-top { font-size: 13px; color: var(--muted); margin-bottom: 24px; flex-wrap: wrap; }
+.order-summary h2 { font-size: 20px; overflow-wrap: anywhere; }
+.order-summary > p { color: var(--muted); margin-top: 8px; font-size: 13px; }
+.order-summary dl { margin: 24px 0 0; }
+.order-summary dl > div:first-child { display: block; border-top: 1px solid var(--line); padding: 24px 0 20px; }
+.order-summary .summary-amount { font-size: 36px; line-height: 1.2; font-weight: 600; margin-top: 8px; color: var(--ink); letter-spacing: -.025em; }
+.order-summary dt { color: var(--muted); font-size: 13px; }
+.order-summary dl > div { border-color: var(--line); }
+.order-summary dd { font-size: 14px; }
+.summary-details { border-top: 1px solid var(--line); padding-top: 16px; }
+.summary-details > summary { cursor: pointer; color: var(--muted); font-size: 13px; }
+.summary-details > summary:hover { color: var(--ink); }
+.summary-details dl { margin: 8px 0 0; }
+.summary-details dl > div:first-child { display: flex; padding: 12px 0; border-top: 0; }
+.attempt-timeline { margin-top: 22px; }
+.attempt-timeline summary { cursor: pointer; font-size: 13px; font-weight: 500; color: var(--ink); }
+.attempt-timeline summary span { font-weight: 400; color: var(--muted); margin-left: 6px; }
+.attempt-timeline button { border-radius: 4px; }
+.attempt-timeline button.current { color: var(--link); }
+.summary-hml { margin-top: 24px; padding-top: 20px; color: var(--muted); font-size: 12px; align-items: flex-start; }
+.summary-hml svg { flex-shrink: 0; }
+.operation-status { padding: 20px; border-radius: 8px; background: var(--secondary); }
+.operation-status > div { flex-wrap: wrap; }
+.payment-success { padding: 36px 12px; }
+.payment-success > div { height: 64px; width: 64px; border-radius: 16px; }
+.payment-success h3 { font-size: 24px; margin-top: 0; }
+.payment-success p { font-size: 14px; line-height: 1.7; }
+.pix-payment h3 { margin-top: 0; font-size: 22px; }
+.pix-payment > p { font-size: 14px; }
+.pix-payment img { border: 1px solid var(--line); border-radius: 12px; padding: 8px; background: white; }
+.pix-payment .button { min-height: 48px; width: 100%; }
+.checkout-loading { display: grid; gap: 14px; padding: 16px 0 32px; }
+.checkout-loading span { color: var(--muted); font-size: 14px; }
+.checkout-loading i { display: block; background: var(--secondary); height: 48px; border-radius: 8px; }
+.checkout-loading i:first-of-type { width: 70%; height: 74px; }
+
+/* Login uses the same brand frame, without introducing another visual system. */
+.login-story { background: var(--sidebar-background); padding: 56px 64px 36px; }
+.login-story h1 { font-size: 48px; line-height: 1.18; max-width: 520px; font-weight: 500; }
+.login-story > div > p { font-size: 16px; line-height: 1.75; color: var(--sidebar-foreground); max-width: 400px; }
+.login-capabilities { gap: 12px; margin-top: 32px; }
+.login-capabilities span { padding: 8px 12px; font-size: 12px; border-color: var(--sidebar-border); color: white; border-radius: 6px; }
+.login-foot { color: var(--sidebar-foreground); }
+.login-form-area { position: relative; flex-direction: column; gap: 40px; background: var(--surface); padding: 80px 48px; }
+.login-form-area > .visual-theme-selector { position: absolute; top: 32px; left: 24px; right: 24px; }
+.login-form-area form { max-width: 380px; }
+.login-lock { background: var(--primary); color: var(--primary-foreground); border-radius: 12px; width: 52px; height: 52px; }
+.login-form-area h2 { font-size: 28px; font-weight: 600; }
+.login-form-area form > p { font-size: 14px; line-height: 1.7; }
+.login-form-area .button { min-height: 48px; }
+.login-disclaimer p { font-size: 12px; }
+.report-bars meter { accent-color: var(--primary); }
+.report-bars meter::-webkit-meter-optimum-value { background: var(--primary); }
+.report-bars meter::-moz-meter-bar { background: var(--primary); }
+
+@media (max-width: 1200px) {
+  .sidebar { width: 208px; }
+  .main-shell { margin-left: 208px; }
+  .sidebar nav a { font-size: 13px; gap: 10px; }
+  .topbar { padding-inline: 28px; }
+  .topbar-note { display: none; }
+  main#main { padding: 32px 28px 40px; }
+  .checkout-layout { grid-template-columns: minmax(0, 1.45fr) minmax(250px, 1fr); gap: 20px; }
+  .checkout-form { padding: 24px; }
+  .order-summary { padding: 22px; }
+  .secure-label { display: none; }
+  .login-story { padding: 44px; }
+  .login-story h1 { font-size: 42px; }
+}
+@media (max-width: 960px) {
+  .sidebar { width: 190px; padding-inline: 12px; }
+  .main-shell { margin-left: 190px; }
+  .sidebar nav a { font-size: 12px; }
+  .checkout-layout, .create-layout { grid-template-columns: minmax(0, 1fr); }
+  .order-summary { position: static; order: -1; }
+  .order-summary dl > div:first-child { display: flex; align-items: center; padding: 16px 0; }
+  .order-summary .summary-amount { margin-top: 0; font-size: 28px; }
+  .order-summary dl { margin-top: 16px; }
+  .summary-top { margin-bottom: 16px; }
+  .summary-hml { margin-top: 16px; padding-top: 16px; }
+  .visual-theme-selector > span { display: none; }
+  .login-story { padding: 36px; }
+  .login-story h1 { font-size: 36px; }
+  .login-form-area { padding-inline: 32px; }
+}
+@media (max-width: 600px) {
+  .sidebar { width: 100%; padding: 20px 20px 0; }
+  .brand { padding: 0; }
+  .brand img { width: 144px; height: 34px; }
+  .workspace-name { font-size: 11px; padding: 0; margin: 0; }
+  .workspace-name span { font-size: 10px; margin-top: 3px; }
+  .sidebar nav { margin-top: 16px; gap: 20px; }
+  .sidebar nav a { min-height: 44px; border-radius: 0; }
+  .sidebar nav a.active { border-color: var(--primary); }
+  .main-shell { margin-left: 0; }
+  .topbar { min-height: 66px; gap: 12px; padding: 10px 18px; flex-wrap: wrap; }
+  .environment { font-size: 11px; }
+  .visual-theme-selector { gap: 0; }
+  .visual-theme-selector button { padding: 8px 10px; font-size: 11px; }
+  .mobile-logout { min-height: 40px; font-size: 0; padding: 8px 0; }
+  .mobile-logout svg { width: 18px; }
+  main#main { padding: 26px 18px 32px; }
+  h1 { font-size: 26px; }
+  .page-heading > .button { font-size: 13px; }
+  .order-heading { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; margin-bottom: 12px; }
+  .order-heading h1 { font-size: 22px; }
+  .order-heading > .button { font-size: 0; margin-top: 0; width: 44px; padding: 10px; gap: 0; }
+  .checkout-layout { gap: 20px; }
+  .checkout-form { padding: 24px 20px; }
+  .checkout-form .section-title h2 { font-size: 22px; }
+  .checkout-progress { gap: 8px; }
+  .checkout-progress li { font-size: 11px; gap: 6px; }
+  .checkout-progress li + li::before { width: 12px; margin-right: 4px; }
+  .payment-methods .segmented { gap: 8px; }
+  .payment-methods .segmented button { padding: 12px 10px; min-height: 88px; gap: 8px; flex-direction: column; align-items: flex-start; justify-content: center; }
+  .method-copy strong { font-size: 13px; }
+  .method-copy small { font-size: 10px; }
+  .form-grid { gap: 0 12px; }
+  .checkout-form input, .checkout-form select, .checkout-form textarea, .login-form-area input { font-size: 16px; }
+  .order-summary { padding: 20px; }
+  .order-summary h2 { font-size: 19px; }
+  .order-summary .summary-amount { font-size: 28px; }
+  .order-summary .attempt-timeline { margin-top: 18px; }
+  .order-summary .summary-top { margin-bottom: 12px; }
+  .order-summary > p { margin-top: 5px; font-size: 12px; }
+  .order-summary dl { margin-top: 12px; }
+  .order-summary .summary-hml { margin-top: 16px; padding-top: 14px; }
+  .summary-details { padding-top: 14px; }
+  .tabs { gap: 24px; margin-bottom: 24px; }
+  .tabs button { font-size: 13px; }
+  .login-story { padding: 28px 26px 32px; }
+  .login-story h1 { font-size: 34px; }
+  .login-story > div { margin: 32px 0 0; }
+  .login-story > div > p { font-size: 14px; margin-top: 20px; }
+  .login-capabilities { margin-top: 24px; gap: 8px; }
+  .login-capabilities span { padding: 6px 10px; font-size: 11px; }
+  .login-form-area { padding: 28px 26px 40px; gap: 28px; align-items: stretch; }
+  .login-form-area > .visual-theme-selector { position: static; justify-content: flex-start; }
+  .login-form-area > .visual-theme-selector > span { display: block; margin-right: 12px; }
+  .login-form-area h2 { font-size: 26px; }
+  .login-form-area form { max-width: none; }
+  footer { padding: 0 18px; font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
